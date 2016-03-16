@@ -20,7 +20,22 @@ struct node {
 	int data;
 	struct node *next;
 };
-
+typedef struct node *lptr;
 void sll_012_sort(struct node *head){
+	lptr t = NULL, p = NULL;
+	int temp;
+
+	for (t = head; t != NULL; t = t->next)
+	{
+		for (p = t; p != NULL; p = p->next)
+		{
+			if (t->data>p->data)
+			{
+				temp = t->data;
+				t->data = p->data;
+				p->data = temp;
+			}
+		}
+	}
 	
 }
